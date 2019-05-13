@@ -1,0 +1,10 @@
+FROM hannesa2/node-hello:arm32v6
+
+WORKDIR /root/
+ADD ./package.json ./package.json
+
+RUN npm i
+ADD ./index.js ./index.js
+
+EXPOSE 3000
+CMD ["npm", "start"]
